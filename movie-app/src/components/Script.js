@@ -4,7 +4,7 @@ const movieList = document.getElementById("movie-list");
 // Fetch movie data from the API (replace with the actual API endpoint)
 fetch("https://api.themoviedb.org/3/discover/movie?api_key=08c523e9a3de20461a89aca32825fd86")
     .then(response => response.json())
-    .then(data => {
+    .then(data => { 
         // Iterate through the movies and create movie cards
         data.forEach(movie => {
             const movieCard = document.createElement("div");
