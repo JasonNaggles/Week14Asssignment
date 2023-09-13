@@ -1,24 +1,24 @@
 // Movie.js
-import React, { useState } from 'react';
-import Stars from './Stars';
-import ReviewList from './ReviewList';
-import ReviewForm from './ReviewForm';
+import React, { useEffect } from 'react';
 
-function Movie({ movie }) {
-  const [reviews, setReviews] = useState([]);
 
-  const addReview = (newReview) => {
-    setReviews([...reviews, newReview]);
-  };
+function Movie() {
+
+  const getMovie = () => {
+    fetch("https://api.themoviedb.org/3/discover/movie?api_key=08c523e9a3de20461a89aca32825fd86")
+    .then(response => response.json())
+    .then(json => console.log(json.results))
+
+  }
+ 
+  useEffect(() => {
+    getMovie()
+  },[])
+
 
   return (
-    <div className="movie">
-      <img src={movie.poster} alt={movie.title} />
-      <h2>{movie.title}</h2>
-      <p>{movie.synopsis}</p>
-      <Stars />
-      <ReviewList reviews={reviews} />
-      <ReviewForm addReview={addReview} />
+    <div>
+      Movie
     </div>
   );
 }
