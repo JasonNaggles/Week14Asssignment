@@ -1,30 +1,35 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
+import MovieList from './src/components/MovieList';
 
 function Movie() {
-
   const [movieList, setMovieList] = useState([])
-
-  const getMovie = () => {
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=08c523e9a3de20461a89aca32825fd86")
-    .then(response => response.json())
-    .then(json => setMovieList(json.results))
-
-  }
- 
+  
   useEffect(() => {
-    getMovie()
-  },[])
+    const getMovies = async () => {
+      try {
+        const response = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=08c523e9a3de20461a89aca32825fd86");
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setMovieList(data.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  console.log(movieList)
+    getMovies();
+  }, []);
 
   return (
     <div>
       {movieList.map((movie) => (
-          <img src= {`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+        <Movie key={movie.id} movie={movie} />
       ))}
     </div>
   );
 }
+  
 
 export default Movie;
