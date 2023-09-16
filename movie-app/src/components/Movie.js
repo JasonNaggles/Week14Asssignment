@@ -1,6 +1,5 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
-import MovieList from './src/components/MovieList';
 
 function Movie() {
   const [movieList, setMovieList] = useState([])
