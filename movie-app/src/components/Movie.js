@@ -25,7 +25,7 @@ function Movie() {
     <div>
       {movieList.map((movie) => (
         <div key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="movieposter"/>
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
         </div>

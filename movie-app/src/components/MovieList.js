@@ -1,10 +1,13 @@
 // Movielist.js
 import React from 'react';
+import Movie from './Movie';
 
-function MovieList({ movie }) {
+function MovieList({ movies }) {
   return (
-    <div>
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+    <div className="movie-list">
+      {movies.map((movie) => (
+        <Movie key={movie.id} movie={movie} />
+      ))}
     </div>
   );
 }
