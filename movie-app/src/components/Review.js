@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ReviewList from './ReviewList';
-import ReviewForm from './ReviewForm';
 
 function Review({ text }) {
   return (

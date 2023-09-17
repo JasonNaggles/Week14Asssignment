@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReviewForm from './ReviewForm';
 
 function ReviewForm({ addReview }) {
   const [newReview, setNewReview] = useState('');

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Stars({ rating }) {
+function Star({ rating }) {
     const MAX_STARS = 5;
   
     // Calculate the number of filled stars based on the rating
@@ -18,4 +18,4 @@ function Stars({ rating }) {
     );
   }
 
-export default Stars;
+export default Star;
