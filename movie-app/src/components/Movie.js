@@ -1,12 +1,12 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
-
+import Stars from './Stars';
 import ReviewList from './ReviewList';
 import ReviewForm from './ReviewForm';
 
 function Movie() {
-  const [movieList, setMovieList] = useState([])
-
+  const [movieList, setMovieList] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
 
   const addReview = (newReview) => {
@@ -38,7 +38,7 @@ function Movie() {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>{movie.synopsis}</p>
-          <Stars />
+          <Stars rating={movie.rating}/>
           <ReviewList reviews={reviews} />
           <ReviewForm addReview={addReview} />
         </div>
