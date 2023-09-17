@@ -1,5 +1,6 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
+import Stars from 'Stars';
 import ReviewList from './ReviewList';
 import ReviewForm from './ReviewForm';
 
