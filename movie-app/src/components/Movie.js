@@ -1,6 +1,6 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
-import Stars from './Stars';
+import Star from './Star';
 import ReviewList from './ReviewList';
 import ReviewForm from './ReviewForm';
 
@@ -37,7 +37,7 @@ function Movie() {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>{movie.synopsis}</p>
-          <Stars rating={movie.rating} />
+          <Star rating={movie.rating} />
           <ReviewList reviews={reviews} />
           <ReviewForm addReview={addReview} />
         </div>
