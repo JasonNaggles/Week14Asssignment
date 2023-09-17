@@ -14,7 +14,6 @@ function Stars({ rating }) {
     return (
       <div className="star-rating">
         {starElements}
-        <Stars rating={movie.rating} />
       </div>
     );
   }

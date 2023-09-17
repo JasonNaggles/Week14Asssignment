@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review';
+import ReviewList from './ReviewList';
 
 function ReviewList({ reviews }) {
   return (
