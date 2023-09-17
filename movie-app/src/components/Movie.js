@@ -1,8 +1,17 @@
 // Movie.js
 import React, { useEffect, useState } from 'react';
 
+import ReviewList from './ReviewList';
+import ReviewForm from './ReviewForm';
+
 function Movie() {
   const [movieList, setMovieList] = useState([])
+
+
+
+  const addReview = (newReview) => {
+    setReviews([...reviews, newReview]);
+  };
   
   useEffect(() => {
     const getMovies = async () => {
@@ -28,6 +37,10 @@ function Movie() {
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="movieposter"/>
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
+          <p>{movie.synopsis}</p>
+          <Stars />
+          <ReviewList reviews={reviews} />
+          <ReviewForm addReview={addReview} />
         </div>
       ))}
     </div>
