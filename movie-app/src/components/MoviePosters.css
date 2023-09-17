@@ -11,6 +11,6 @@
   }
   
   .movie-poster img {
-    width: 70%; /* Adjust the width as needed */
+    width: 300px; /* Adjust the width as needed */
     height: auto;
   }
