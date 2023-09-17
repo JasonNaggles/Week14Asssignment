@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Star({ rating }) {
-    const MAX_STARS = 5;
-  
-    // Calculate the number of filled stars based on the rating
-    const filledStars = Math.floor(rating / 2);
-  
-    // Create an array of star elements
-    const starElements = Array(MAX_STARS).fill().map((_, index) => (
-      <span key={index} className={`star ${index < filledStars ? 'filled' : ''}`}>&#9733;</span>
-    ));
-  
-    return (
-      <div className="star-rating">
-        {starElements}
-      </div>
-    );
-  }
+function Star({ rating, onChange }) {
+  const [selectedRating, setSelectedRating] = useState(rating);
 
+  const handleStarClick = (newRating) => {
+    setSelectedRating(newRating);
+    if (onChange) {
+      onChange(newRating);
+    }
+  };
+
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      const className = i <= selectedRating ? 'star filled' : 'star';
+      stars.push(
+        <span
+          key={i}
+          className={className}
+          onClick={() => handleStarClick(i)}
+        >
+          &#9733;
+        </span>
+      );
+    }
+    return stars;
+  };
+  return <div className="star-rating">{renderStars()}</div>;
+}
 export default Star;
