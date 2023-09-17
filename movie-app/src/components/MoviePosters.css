@@ -1,0 +1,16 @@
+.movie-posters-column {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+  }
+  
+  .movie-poster {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .movie-poster img {
+    width: 70%; /* Adjust the width as needed */
+    height: auto;
+  }

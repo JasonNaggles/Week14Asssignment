@@ -1,4 +1,3 @@
-// Movie.js
 import React, { useEffect, useState } from 'react';
 import Star from './Star';
 import ReviewList from './ReviewList';
@@ -30,10 +29,10 @@ function Movie() {
   }, []);
 
   return (
-    <div>
-      {movieList.map((movie) => (
-        <div key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="movieposter"/>
+    <div className="movie-posters-column">
+      {movieList.slice(0, 3).map((movie) => (
+        <div key={movie.id} className="movie-poster">
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>{movie.synopsis}</p>
