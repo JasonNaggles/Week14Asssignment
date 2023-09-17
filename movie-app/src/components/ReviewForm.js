@@ -17,7 +17,7 @@ function ReviewForm({ addReview }) {
         value={newReview}
         onChange={(e) => setNewReview(e.target.value)}
       ></textarea>
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn btn-primary">Submit</button>
     </form>
   );
 }
