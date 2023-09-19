@@ -4,7 +4,7 @@ import Movie from './components/Movie';
 import './components/MoviePosters.css';
 import Star from './components/Star';
 function App() {
-  const [rating, setRating] = useState(3); // Initial rating
+  const [rating, setRating] = useState(); // Initial rating
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
@@ -15,7 +15,6 @@ function App() {
     <div>
       <Movie />
       <Star rating={rating} onChange={handleRatingChange} />
-      <p>Selected Rating: {rating}</p>
     </div>
   );
 }

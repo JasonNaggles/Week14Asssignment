@@ -12,7 +12,7 @@ function ReviewForm({ addReview }) {
   return (
     <form className="review-form" onSubmit={handleSubmit}>
       <textarea
-        rows="4"
+        rows="8"
         placeholder="Leave a review..."
         value={newReview}
         onChange={(e) => setNewReview(e.target.value)}
