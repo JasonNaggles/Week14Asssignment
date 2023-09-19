@@ -36,7 +36,7 @@ function Movie() {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <p>{movie.synopsis}</p>
-          <Star />
+          <StarRating />
           <ReviewList reviews={reviews} />
           <ReviewForm addReview={addReview} />
         </div>
