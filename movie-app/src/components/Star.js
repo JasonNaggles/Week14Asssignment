@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
 
-function Star({ rating, onChange }) {
-  const [selectedRating, setSelectedRating] = useState(rating);
+function Star({ selected = false, onClick }) {
+  return (
+    <span className={selected ? 'star selected' : 'star'} onClick={onClick}>
+      &#9733;
+    </span>
+  );
+}
+
+function StarRating({ initialValue, onChange }) {
+  const [rating, setRating] = useState(initialValue);
 
   const handleStarClick = (newRating) => {
-    setSelectedRating(newRating);
+    setRating(newRating);
     if (onChange) {
       onChange(newRating);
     }
   };
 
-  const renderStars = () => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      const className = i <= selectedRating ? 'star filled' : 'star';
-      stars.push(
-        <span
-          key={i}
-          className={className}
-          onClick={() => handleStarClick(i)}
-        >
-          &#9733;
-        </span>
-      );
-    }
-    return stars;
-  };
-  return <div className="star-rating">{renderStars()}</div>;
+  return (
+    <div className="star-rating">
+      {[1, 2, 3, 4, 5].map((value) => (
+        <Star
+          key={value}
+          selected={value <= rating}
+          onClick={() => handleStarClick(value)}
+        />
+      ))}
+    </div>
+  );
 }
+    
 export default Star;
