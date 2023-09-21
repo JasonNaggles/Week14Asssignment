@@ -12,7 +12,7 @@ function App() {
     <div>
       <Movie />
       <StarRating />
-      <ReviewForm addReview={addReview} />
+      <ReviewForm />
     </div>
   );
 }
