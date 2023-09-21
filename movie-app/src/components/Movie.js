@@ -30,7 +30,7 @@ function Movie() {
 
   return (
     <div className="movie-posters-column">
-      {movieList.slice(0, 5).map((movie) => (
+      {movieList.slice(0, 4).map((movie) => (
         <div key={movie.id} className="movie-poster">
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
           <h2>{movie.title}</h2>
